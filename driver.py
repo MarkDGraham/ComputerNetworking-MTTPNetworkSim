@@ -17,8 +17,12 @@ def generate_network(nodes):
     plt.show()
     return G
 
-def save_network(G, path = 'output.txt'):
+#saves the information to output.txt
+def save_network(G, k_paths, path = 'output.txt'):
     nx.write_edgelist(G, path)
+    file = open(path, 'a')
+    file.write(str(k_paths))
+    file.close()
 
 #calculates the k shortest paths from node a to node B
 def k_shortest_paths(G, start, end, k, weight='weight'):
@@ -26,4 +30,5 @@ def k_shortest_paths(G, start, end, k, weight='weight'):
 
 
 G = generate_network(10)
-save_network(G)
+k_paths = k_shortest_paths(G, 0, 9, 3)
+save_network(G, k_paths)
