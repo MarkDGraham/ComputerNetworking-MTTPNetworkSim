@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import random as rand
 
 #currently doesn't save the plot anywhere, just draws it.
-def generate_network(nodes, path = 'output.txt'):
+def generate_network(nodes):
     G = nx.gnp_random_graph(nodes, .5)
     # assign weights to edges
     for (u, v) in G.edges():
@@ -15,9 +15,15 @@ def generate_network(nodes, path = 'output.txt'):
                     for u, v, d in G.edges(data=True)])
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
     plt.show()
+    return G
+
+def save_network(G, path = 'output.txt'):
+    nx.write_edgelist(G, path)
 
 #calculates the k shortest paths from node a to node B
 def k_shortest_paths(G, start, end, k, weight='weight'):
     return list(islice(nx.shortest_simple_paths(G, start, end, weight=weight), k))
 
 
+G = generate_network(10)
+save_network(G)
