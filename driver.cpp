@@ -17,6 +17,11 @@ using namespace std;
 
 const int size = 100;
 
+void combinationUtil(float arr[], float data[], int start, int end, int index,
+                     int r, ofstream& out);
+
+void printCombination(float arr[], int n, int r, ofstream& out);
+
 int main()
 {
 
@@ -174,10 +179,12 @@ int main()
         TCP = 0;
     }
 
-    outFile << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-            << endl << "Path Failure Probability Anaylsis:" << endl
-            << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl ;
+    outFile << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            << endl << "Path Failure Probability Anaylsis:" << endl;
 
+    for(int i = 0; i < pathSize; i++)
+        printCombination(failing, pathSize, i+1, outFile);
+        /*
     for(int i = 0; i < pathSize; i++)
     {
         for(int j = i ; j < pathSize; j++)
@@ -199,9 +206,54 @@ int main()
             }
         }
     }
-
+    */
     // Closes the files and terminates the program with a success.
     inFile.close();
     outFile.close();
     return 0;
+}
+
+void printCombination(float arr[], int n, int r, ofstream &out)
+{
+    // A temporary array to store
+    // all combination one by one
+    float data[r];
+
+    // Print all combination using
+    // temporary array 'data[]'
+    combinationUtil(arr, data, 0, n-1, 0, r, out);
+}
+
+void combinationUtil(float arr[], float data[],
+                    int start, int end,
+                    int index, int r, ofstream& out)
+{
+    // Current combination is ready
+    // to be printed, print it
+    if (index == r)
+    {
+        out << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+            << "Path: " << flush;
+
+        for (int j = 0; j < r; j++)
+        {
+                out << endl << data[j] * 100.0 << "%"<< flush;
+        }
+        out << endl;
+
+        return;
+    }
+
+    // replace index with all possible
+    // elements. The condition "end-i+1 >= r-index"
+    // makes sure that including one element
+    // at index will make a combination with
+    // remaining elements at remaining positions
+    for (int i = start; i <= end &&
+        end - i + 1 >= r - index; i++)
+    {
+        data[index] = arr[i];
+        combinationUtil(arr, data, i+1,
+                        end, index+1, r, out);
+    }
 }
