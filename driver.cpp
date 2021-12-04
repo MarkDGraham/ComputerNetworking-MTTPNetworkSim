@@ -1,3 +1,14 @@
+/*
+ * Name: driver.cpp
+ * Project name: CPE 400 Final Project
+ * Date of Creation: November 25, 2021
+ * Memeber Names:
+ *        Cooper Flourens
+ *        Mark Graham
+ */
+
+// NOTE: Mark Graham is solely responsible for the mess below.
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -9,6 +20,7 @@ const int size = 100;
 int main()
 {
 
+    // Gets file input of graph information and checks if file opens properly.
     ifstream inFile;
     inFile.open("output.txt");
     if(!(inFile.is_open()))
@@ -17,8 +29,9 @@ int main()
         return -1;
     }
 
+    // Opens the file for the analysis of the graph.
     ofstream outFile;
-    outFile.open("results.txt");
+    outFile.open("pathAnalysis.txt");
     if(!(outFile.is_open()))
     {
         cerr << "Output file failed to open!" << endl;
@@ -30,10 +43,10 @@ int main()
     int pathLengths[10] = {0};
     string line = "";
     int placement = 0;
-
     bool endCondition = true;
 
-    // Gets connection weights for node to node UDP
+    // Gets connection weights for node to node UDP (time in ms) and places
+    // them into an array.
     for(int i = 0; endCondition && i < size; i++)
     {
 
@@ -43,10 +56,12 @@ int main()
             endCondition = false;
         }
 
+        // Gets the values of the connection nodes and the weight.
         for(int j = 0; endCondition && j < line.length(); j++)
         {
             if(line[j] >= '0' && line[j] <= '9')
             {
+                // Gets value of double digits at the end.
                 if(line[j+2] == '}' && placement <= 2)
                 {
                     int value = line[j] - '0';
@@ -55,6 +70,7 @@ int main()
                     connectionArray[i][placement] = value;
                     placement++;
                 }
+                // Gets the value of digits
                 else if(placement <= 2)
                 {
                     int value = line[j] - '0';
@@ -67,10 +83,11 @@ int main()
         placement = 0;
     }
 
-    // Gets k-shortest paths
+    // Gets k-shortest paths and places the into an array.
     int row = 0, col = 0, num = 0;
     for(int i = 1; i < line.length(); i++)
     {
+        // Checks to see if the paths have ended.
         if(line[i] == ']' && line[i+1] != ']')
         {
             pathSize++;
@@ -79,6 +96,7 @@ int main()
             row++;
         }
 
+        // Places values frompath into an array (paths).
         if(line[i] >= '0' && line[i] <= '9')
         {
             int value = line[i] - '0';
@@ -89,30 +107,66 @@ int main()
     }
 
     int TCP = 0, UDP = 0;
-    float failing = 0;
+    float failing = 1.0, prob = .2;
     col = 0;
 
     // Row for the path currently on.
     for(int i = 0; i < pathSize; i++)
     {
+        if(i != 0 && i < pathSize)
+        {
+            outFile << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                    << endl;
+        }
+        outFile << "Path: " << flush;
+
         // Col for the path currently on.
         for(int j = 0; j < pathLengths[i]-1; j++)
         {
             // Row for the connections currently on.
             for(int k = 0; k < connectionSize; k++)
             {
-                // Bug is that second connection does notwant to add to the UDP
-                // weight. I believe it has something to do with th loop.
+                // Checks if the connections are in the path, then adds weight
+                // to the TCP and adjusts for TCP.
                 if(connectionArray[k][0] == paths[i][j] && connectionArray[k][1] == paths[i][j+1])
                 {
+                    // Beginning of fence post problem
+                    if(j == 0)
+                    {
+                        outFile << paths[i][j] << flush;
+                    }
+
+                    if(j != pathLengths[i]-1)
+                    {
+                        outFile << " - " << flush;
+                    }
+                    //^^^^^ Ending of fence post problem ^^^^^
+
+                    // Outputs the path node and updates the UDP, TCP, and
+                    // probability of failure.
+                    outFile << paths[i][j+1] << flush;
                     UDP += connectionArray[k][2];
+                    TCP += UDP + 3;
+                    failing *= prob;
                     break;
                 }
             }
         }
+
+        // Outputs to the file for the data of the current path.
+        failing *= prob;
+        outFile << endl << "NOTE: TCP = UDP + (3ms * number of nodes in path)"
+                << endl << "UDP: " << UDP << endl
+                << "TCP: " << TCP << endl
+                << "Probability of Failure: " << failing * 100 << "%" << endl;
+
+        // Resets values for next path.
         UDP = 0;
+        TCP = 0;
+        failing = 0.0;
     }
 
+    // Closes the files and terminates the program with a success.
     inFile.close();
     outFile.close();
     return 0;

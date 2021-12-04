@@ -1,0 +1,17 @@
+Path: 0 - 5 - 9
+NOTE: TCP = UDP + (3ms * number of nodes in path)
+UDP: 6
+TCP: 13
+Probability of Failure: 0.8%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 
+NOTE: TCP = UDP + (3ms * number of nodes in path)
+UDP: 0
+TCP: 0
+Probability of Failure: 0%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 
+NOTE: TCP = UDP + (3ms * number of nodes in path)
+UDP: 0
+TCP: 0
+Probability of Failure: 0%
