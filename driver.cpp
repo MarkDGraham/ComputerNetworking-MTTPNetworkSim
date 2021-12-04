@@ -94,9 +94,10 @@ int main()
             pathLengths[row] = num;
             num = 0;
             row++;
+            col = 0;
         }
 
-        // Places values frompath into an array (paths).
+        // Places values from path into an array (paths).
         if(line[i] >= '0' && line[i] <= '9')
         {
             int value = line[i] - '0';
@@ -104,11 +105,17 @@ int main()
             num++;
             col++;
         }
+
     }
 
     int TCP = 0, UDP = 0;
-    float failing = 1.0, prob = .2;
+    float failing[pathSize] = {0.0}, prob = .1;
     col = 0;
+
+    outFile << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            << endl << "Path Anaylsis:" << endl
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            << endl;
 
     // Row for the path currently on.
     for(int i = 0; i < pathSize; i++)
@@ -123,12 +130,13 @@ int main()
         // Col for the path currently on.
         for(int j = 0; j < pathLengths[i]-1; j++)
         {
+
             // Row for the connections currently on.
             for(int k = 0; k < connectionSize; k++)
             {
                 // Checks if the connections are in the path, then adds weight
                 // to the TCP and adjusts for TCP.
-                if(connectionArray[k][0] == paths[i][j] && connectionArray[k][1] == paths[i][j+1])
+                if(connectionArray[k][0] == paths[i][j] && connectionArray[k][1] == paths[i][j+1] || connectionArray[k][0] == paths[i][j+1] && connectionArray[k][1] == paths[i][j])
                 {
                     // Beginning of fence post problem
                     if(j == 0)
@@ -147,23 +155,49 @@ int main()
                     outFile << paths[i][j+1] << flush;
                     UDP += connectionArray[k][2];
                     TCP += UDP + 3;
-                    failing *= prob;
+                    failing[i] += prob;
                     break;
                 }
             }
         }
 
         // Outputs to the file for the data of the current path.
-        failing *= prob;
+        failing[i] += prob;
         outFile << endl << "NOTE: TCP = UDP + (3ms * number of nodes in path)"
                 << endl << "UDP: " << UDP << endl
                 << "TCP: " << TCP << endl
-                << "Probability of Failure: " << failing * 100 << "%" << endl;
+                << "Probability of Failure: " << failing[i] * 100
+                << "%" << endl;
 
         // Resets values for next path.
         UDP = 0;
         TCP = 0;
-        failing = 0.0;
+    }
+
+    outFile << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            << endl << "Path Failure Probability Anaylsis:" << endl
+            << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl ;
+
+    for(int i = 0; i < pathSize; i++)
+    {
+        for(int j = i ; j < pathSize; j++)
+        {
+            if(i == j)
+            {
+                outFile << "Path: " << i + 1 << endl << "Failure Probability: "
+                        << failing[i] * 100 << "%" << endl
+                        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                        << endl;
+            }
+            else
+            {
+                outFile << "Path: " << i+1 << " & " << j+1<< endl
+                        << "Failure Probability: "
+                        << (failing[i] * failing[j]) * 100 << "%" << endl
+                        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                        << endl;
+            }
+        }
     }
 
     // Closes the files and terminates the program with a success.

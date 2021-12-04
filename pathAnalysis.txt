@@ -1,17 +1,41 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path Anaylsis:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Path: 0 - 5 - 9
 NOTE: TCP = UDP + (3ms * number of nodes in path)
 UDP: 6
 TCP: 13
-Probability of Failure: 0.8%
+Probability of Failure: 30%
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
+Path: 0 - 5 - 3 - 9
 NOTE: TCP = UDP + (3ms * number of nodes in path)
-UDP: 0
-TCP: 0
-Probability of Failure: 0%
+UDP: 6
+TCP: 18
+Probability of Failure: 40%
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
+Path: 0 - 3 - 9
 NOTE: TCP = UDP + (3ms * number of nodes in path)
-UDP: 0
-TCP: 0
-Probability of Failure: 0%
+UDP: 8
+TCP: 18
+Probability of Failure: 30%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path Failure Probability Anaylsis:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 1
+Failure Probability: 30%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 1 & 2
+Failure Probability: 12%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 1 & 3
+Failure Probability: 9%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 2
+Failure Probability: 40%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 2 & 3
+Failure Probability: 12%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path: 3
+Failure Probability: 30%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
