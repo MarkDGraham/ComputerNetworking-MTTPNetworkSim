@@ -13,6 +13,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 const int size = 100;
@@ -114,7 +115,8 @@ int main()
     }
 
     int TCP = 0, UDP = 0;
-    float failing[pathSize] = {0.0}, prob = .1;
+    float failing[pathSize], prob = .1;
+    fill(failing, failing + pathSize, 0);
     col = 0;
 
     outFile << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -218,6 +220,7 @@ void printCombination(float arr[], int n, int r, ofstream &out)
     // A temporary array to store
     // all combination one by one
     float data[r];
+    fill(data, data + r, 0.0);
 
     // Print all combination using
     // temporary array 'data[]'
@@ -233,12 +236,14 @@ void combinationUtil(float arr[], float data[],
     if (index == r)
     {
         out << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-            << "Path: " << flush;
-
+            << "Path Failure Analysis: " << flush;
+        float rate_of_failure = 1;
         for (int j = 0; j < r; j++)
         {
-                out << endl << data[j] * 100.0 << "%"<< flush;
+            rate_of_failure *= data[j];
+                out << endl << "Path " << j+1 << " Failure Rate: " << data[j] * 100.0 << "%"<< flush;
         }
+        out << endl << "Combined Failure Probability: " << rate_of_failure * 100.0 << "%" << endl;
         out << endl;
 
         return;

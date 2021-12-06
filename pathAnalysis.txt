@@ -34,144 +34,206 @@ Probability of Failure: 40%
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Path Failure Probability Anaylsis:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Combined Failure Probability: 30%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Combined Failure Probability: 40%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Combined Failure Probability: 30%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Combined Failure Probability: 40%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Combined Failure Probability: 40%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 12%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-30%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 30%
+Combined Failure Probability: 9%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 12%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 12%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-30%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 30%
+Combined Failure Probability: 12%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 16%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 16%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 12%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 12%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 40%
+Combined Failure Probability: 16%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-30%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 30%
+Combined Failure Probability: 3.6%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 4.8%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 4.8%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 30%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 3.6%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 30%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 3.6%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 4.8%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 30%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 4.8%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 30%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 4.8%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 6.4%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 40%
+Combined Failure Probability: 4.8%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 30%
+Path 4 Failure Rate: 40%
+Combined Failure Probability: 1.44%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-30%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 30%
+Path 4 Failure Rate: 40%
+Combined Failure Probability: 1.44%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 40%
+Path 4 Failure Rate: 40%
+Combined Failure Probability: 1.92%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 30%
+Path 3 Failure Rate: 40%
+Path 4 Failure Rate: 40%
+Combined Failure Probability: 1.44%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-40%
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 40%
+Path 2 Failure Rate: 30%
+Path 3 Failure Rate: 40%
+Path 4 Failure Rate: 40%
+Combined Failure Probability: 1.92%
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Path: 
-30%
-40%
-30%
-40%
-40%
+Path Failure Analysis: 
+Path 1 Failure Rate: 30%
+Path 2 Failure Rate: 40%
+Path 3 Failure Rate: 30%
+Path 4 Failure Rate: 40%
+Path 5 Failure Rate: 40%
+Combined Failure Probability: 0.576%
+
