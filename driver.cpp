@@ -7,8 +7,6 @@
  *        Mark Graham
  */
 
-// NOTE: Mark Graham is solely responsible for the mess below.
-
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -186,29 +184,6 @@ int main()
 
     for(int i = 0; i < pathSize; i++)
         printCombination(failing, pathSize, i+1, outFile);
-        /*
-    for(int i = 0; i < pathSize; i++)
-    {
-        for(int j = i ; j < pathSize; j++)
-        {
-            if(i == j)
-            {
-                outFile << "Path: " << i + 1 << endl << "Failure Probability: "
-                        << failing[i] * 100 << "%" << endl
-                        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                        << endl;
-            }
-            else
-            {
-                outFile << "Path: " << i+1 << " & " << j+1<< endl
-                        << "Failure Probability: "
-                        << (failing[i] * failing[j]) * 100 << "%" << endl
-                        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                        << endl;
-            }
-        }
-    }
-    */
     // Closes the files and terminates the program with a success.
     inFile.close();
     outFile.close();
